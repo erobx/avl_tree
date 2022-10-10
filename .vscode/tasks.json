@@ -1,0 +1,59 @@
+{
+    "tasks": [
+        {
+            "type": "cppbuild",
+            "label": "Build main",
+            "command": "/usr/bin/g++",
+            "args": [
+                "-fdiagnostics-color=always",
+                "-g",
+                "-std=c++14",
+                "-Werror",
+                "-Wuninitialized",
+                "--include-directory=${workspaceFolder}/include/",
+                "-o",
+                "${workspaceFolder}/build/${fileBasenameNoExtension}",
+                "${workspaceFolder}/src/**"
+            ],
+            "options": {
+                "cwd": "${fileDirname}"
+            },
+            "problemMatcher": [
+                "$gcc"
+            ],
+            "group": {
+                "kind": "build",
+                "isDefault": false
+            },
+            "detail": "Task done"
+        },
+        {
+            "type": "cppbuild",
+            "label": "Build test",
+            "command": "/usr/bin/g++",
+            "args": [
+                "-fdiagnostics-color=always",
+                "-g",
+                "-std=c++14",
+                "-Werror",
+                "-Wuninitialized",
+                "--include-directory=${workspaceFolder}/include/",
+                "-o",
+                "${workspaceFolder}/build/${fileBasenameNoExtension}",
+                "${file}"
+            ],
+            "options": {
+                "cwd": "${fileDirname}"
+            },
+            "problemMatcher": [
+                "$gcc"
+            ],
+            "group": {
+                "kind": "test",
+                "isDefault": true
+            },
+            "detail": "Debugger"
+        },
+    ],
+    "version": "2.0.0"
+}
