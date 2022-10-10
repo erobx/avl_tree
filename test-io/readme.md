@@ -5,7 +5,7 @@ To test your output locally, open a terminal preferably bash based e.g. **git ba
 #### Public Test 1:
 
 `g++ -std=c++14 -Werror -Wuninitialized -o build/test_io src/main.cpp && build/test_io < test-io/input-files/1.txt`
-        
+
 #### Public Test N (where N in the test case number):
 
 `g++ -std=c++14 -Werror -Wuninitialized -o build/test_io src/main.cpp && build/test_io < test-io/input-files/N.txt`
@@ -29,22 +29,22 @@ Run these three commands:
 
 ##### Or Run this: 
 
-`g++ -std=c++14 -Werror -Wuninitialized -o build/test_io src/main.cpp && build/test_io < test-io/input-files/1.txt > test-io/output-files/1.txt && diff -w test-io/expected-output-files/1.txt test-io/output-files/1.txt`
+`g++ -std=c++14 -Werror -Wuninitialized -o build/test_io src/*.cpp && build/test_io < test-io/input-files/1.txt > test-io/output-files/1.txt && diff -w test-io/expected-output-files/1.txt test-io/output-files/1.txt`
 
 
 #### Public Test 2:
 
-`g++ -std=c++14 -Werror -Wuninitialized -o build/test_io src/main.cpp && build/test_io < test-io/input-files/2.txt > test-io/output-files/2.txt && diff -w test-io/expected-output-files/2.txt test-io/output-files/2.txt`
+`g++ -std=c++14 -Werror -Wuninitialized -o build/test_io src/*.cpp && build/test_io < test-io/input-files/2.txt > test-io/output-files/2.txt && diff -w test-io/expected-output-files/2.txt test-io/output-files/2.txt`
 
 #### Public Test 3:
 
-`g++ -std=c++14 -Werror -Wuninitialized -o build/test_io src/main.cpp && build/test_io < test-io/input-files/3.txt > test-io/output-files/3.txt && diff -w test-io/expected-output-files/3.txt test-io/output-files/3.txt`
+`g++ -std=c++14 -Werror -Wuninitialized -o build/test_io src/*.cpp && build/test_io < test-io/input-files/3.txt > test-io/output-files/3.txt && diff -w test-io/expected-output-files/3.txt test-io/output-files/3.txt`
 
 #### Public Test 4:
 
-`g++ -std=c++14 -Werror -Wuninitialized -o build/test_io src/main.cpp && build/test_io < test-io/input-files/4.txt > test-io/output-files/4.txt && diff -w test-io/expected-output-files/4.txt test-io/output-files/4.txt`
+`g++ -std=c++14 -Werror -Wuninitialized -o build/test_io src/*.cpp && build/test_io < test-io/input-files/4.txt > test-io/output-files/4.txt && diff -w test-io/expected-output-files/4.txt test-io/output-files/4.txt`
 
 #### Public Test 5:
 
-`g++ -std=c++14 -Werror -Wuninitialized -o build/test_io src/main.cpp && build/test_io < test-io/input-files/5.txt > test-io/output-files/5.txt && diff -w test-io/expected-output-files/5.txt test-io/output-files/5.txt`
+`g++ -std=c++14 -Werror -Wuninitialized -o build/test_io src/*.cpp && build/test_io < test-io/input-files/5.txt > test-io/output-files/5.txt && diff -w test-io/expected-output-files/5.txt test-io/output-files/5.txt`
 

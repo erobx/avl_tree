@@ -1,4 +1,4 @@
-#include "AVL.h"
+#include "../include/AVL.h"
 #include <iostream>
 
 int AVL::getHeight(TreeNode* helpRoot) {
