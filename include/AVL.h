@@ -36,6 +36,9 @@ class AVL {
         void getInorderList(TreeNode* helpRoot);
         AVL::TreeNode* helperRemoveInorder(TreeNode* helpRoot, int n);
 
+        // Destroy tree
+        void destroyTree(TreeNode* helpRoot);
+
     public:
         AVL() {};
         ~AVL() {};

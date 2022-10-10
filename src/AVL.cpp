@@ -212,7 +212,6 @@ void AVL::helperPostorder(TreeNode* helpRoot) {
         if (helpRoot->right) {
             helperPostorder(helpRoot->right);
             std::cout << ", ";
-
         }
         std::cout << helpRoot->name;
     }
@@ -240,6 +239,18 @@ AVL::TreeNode* AVL::helperRemoveInorder(TreeNode* helpRoot, int n) {
         i++;
     }
     return helpRoot;
+}
+
+void AVL::destroyTree(TreeNode* helpRoot) {
+    if (helpRoot) {
+        destroyTree(helpRoot->left);
+        destroyTree(helpRoot->right);
+        delete helpRoot;
+    }
+}
+
+AVL::~AVL() {
+    destroyTree(this->root);
 }
 
 void AVL::insert(std::string name, std::string id) {
