@@ -1,4 +1,4 @@
-#include "../include/AVL.h"
+#include "AVL.h"
 #include <iostream>
 #include <string>
 #include <vector>
@@ -54,7 +54,7 @@ void handleInsert(std::string &input, AVL &tree) {
 
 void handleRemove(std::string &input, AVL &tree) {
 	// Check valid id
-	std::string id = getId(input);
+	std::string id = input.substr(input.find(' ')+1);
 	if (!isValidID(id)) return failure();
 
 	// Handle remove(id)

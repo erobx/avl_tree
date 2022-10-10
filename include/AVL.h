@@ -41,7 +41,7 @@ class AVL {
 
     public:
         AVL() {};
-        ~AVL() {};
+        ~AVL();
         void insert(std::string name, std::string id);
         void remove(std::string id);
         void searchName(std::string name);

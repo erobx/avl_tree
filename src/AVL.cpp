@@ -1,4 +1,4 @@
-#include "../include/AVL.h"
+#include "AVL.h"
 #include <iostream>
 
 int AVL::getHeight(TreeNode* helpRoot) {
@@ -167,10 +167,10 @@ bool AVL::helperRemoveSearch(TreeNode* helpRoot, std::string id) {
     else if (helpRoot->id == id) {
         return true;
     } else if (id < helpRoot->id) {
-        bool result = helperSearchId(helpRoot->left, id);
+        bool result = helperRemoveSearch(helpRoot->left, id);
         return result;
     } else {
-        bool result = helperSearchId(helpRoot->right, id);
+        bool result = helperRemoveSearch(helpRoot->right, id);
         return result;
     }
 }
