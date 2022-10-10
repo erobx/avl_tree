@@ -3,6 +3,8 @@
 #include <string>
 #include <vector>
 
+// Valid functions are based on project breakdown slides
+
 /* Note: 
 	1. You will have to comment main() when unit testing your code because catch uses its own main().
 	2. You will submit this main.cpp file and any header files you have on Gradescope. 
@@ -35,6 +37,7 @@ std::string getName(std::string &input) {
 }
 
 std::string getId(std::string &input) {
+	// only when there is a name
 	return input.substr(input.rfind('"')+2);
 }
 
@@ -88,37 +91,37 @@ void handleRemoveInorder(std::string &input, AVL &tree) {
 	tree.removeInorder(n);
 }
 
-// int main() {
-// 	AVL tree;
-// 	int num_of_commands;
-// 	std::cin >> num_of_commands;
-// 	std::cin.ignore();
+int main() {
+	AVL tree;
+	int num_of_commands;
+	std::cin >> num_of_commands;
+	std::cin.ignore();
 
-// 	for (int i = 0; i < num_of_commands; i++) {
-// 		std::string input;
-// 		std::getline(std::cin, input);
+	for (int i = 0; i < num_of_commands; i++) {
+		std::string input;
+		std::getline(std::cin, input);
 		
-// 		// Take a substring of input from beginning to first space
-// 		std::string command = input.substr(0, input.find(' '));
+		// Take a substring of input from beginning to first space
+		std::string command = input.substr(0, input.find(' '));
 
-// 		if (command == "insert")
-// 			handleInsert(input, tree);
-// 		else if (command == "remove")
-// 			handleRemove(input, tree);
-// 		else if (command == "search")
-// 			handleSearch(input, tree);
-// 		else if (command == "printInorder")
-// 		 	tree.printInorder();
-// 		else if (command == "printPreorder")
-// 		 	tree.printPreorder();
-// 		else if (command == "printPostorder")
-// 		 	tree.printPostorder();
-// 		else if (command == "printLevelCount")
-// 		 	tree.printLevelCount();
-// 		else if (command == "removeInorder")
-// 			handleRemoveInorder(input, tree);
-// 		else
-// 			failure();
-// 	}
-// 	return 0;
-// }
+		if (command == "insert")
+			handleInsert(input, tree);
+		else if (command == "remove")
+			handleRemove(input, tree);
+		else if (command == "search")
+			handleSearch(input, tree);
+		else if (command == "printInorder")
+		 	tree.printInorder();
+		else if (command == "printPreorder")
+		 	tree.printPreorder();
+		else if (command == "printPostorder")
+		 	tree.printPostorder();
+		else if (command == "printLevelCount")
+		 	tree.printLevelCount();
+		else if (command == "removeInorder")
+			handleRemoveInorder(input, tree);
+		else
+			failure();
+	}
+	return 0;
+}

@@ -14,7 +14,7 @@ class AVL {
         };
 
         TreeNode* root = nullptr;
-        bool flag = false;                  // searchName if name exists
+        bool flag = false;                  // if name exists in searchName
         int size = 0;                       // total nodes
         std::vector<TreeNode*> inorder;     // list of inorder nodes
         // helper functions
@@ -36,7 +36,7 @@ class AVL {
         void getInorderList(TreeNode* helpRoot);
         AVL::TreeNode* helperRemoveInorder(TreeNode* helpRoot, int n);
 
-        // Destroy tree
+        // Deallocate memory for deconstructor
         void destroyTree(TreeNode* helpRoot);
 
     public:

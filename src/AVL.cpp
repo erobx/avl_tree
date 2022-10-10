@@ -1,6 +1,9 @@
 #include "../include/AVL.h"
 #include <iostream>
 
+// Rotations from Stepik problems
+// printInorder is based on lecture slides
+
 int AVL::getHeight(TreeNode* helpRoot) {
     if (helpRoot == nullptr)
         return 0;
@@ -44,7 +47,7 @@ AVL::TreeNode* AVL::rotateRightLeft(TreeNode* helpRoot) {
 }
 
 AVL::TreeNode* AVL::getInorderSuccessor(TreeNode* helpRoot) {
-    // loop through nodes to get left most leaf
+    // loop through nodes to get leftmost leaf
     TreeNode* current = helpRoot;
     while (current->left != nullptr)
         current = current->left;
@@ -105,7 +108,7 @@ AVL::TreeNode* AVL::helperRemove(TreeNode* helpRoot, std::string id) {
                 helpRoot = nullptr;
             // 1 child
             } else {
-                // copy data of child
+                // copy child
                 *helpRoot = *temp;
             }
             delete temp;
@@ -132,10 +135,11 @@ AVL::TreeNode* AVL::helperRemove(TreeNode* helpRoot, std::string id) {
 }
 
 void AVL::helperSearchName(TreeNode* helpRoot, std::string name) {
+    // check if name is in tree and print id
     if (helpRoot) {
         if (helpRoot->name == name) {
             std::cout << helpRoot->id << std::endl;
-            flag = true;
+            flag = true;        // true if one name is in tree, could be multiple
         }
         if (helpRoot->left) {
             helperSearchName(helpRoot->left, name);
@@ -147,6 +151,7 @@ void AVL::helperSearchName(TreeNode* helpRoot, std::string name) {
 }
 
 bool AVL::helperSearchId(TreeNode* helpRoot, std::string id) {
+    // check if id is in tree and print name
     if (helpRoot == nullptr)
         return false;
     else if (helpRoot->id == id) {
@@ -162,6 +167,7 @@ bool AVL::helperSearchId(TreeNode* helpRoot, std::string id) {
 }
 
 bool AVL::helperRemoveSearch(TreeNode* helpRoot, std::string id) {
+    // check if id is in tree before removing
     if (helpRoot == nullptr)
         return false;
     else if (helpRoot->id == id) {
@@ -218,6 +224,7 @@ void AVL::helperPostorder(TreeNode* helpRoot) {
 }
 
 void AVL::getInorderList(TreeNode* helpRoot) {
+    // populate inorder vector
     if (helpRoot) {
         if (helpRoot->left) {
             getInorderList(helpRoot->left);
@@ -230,6 +237,7 @@ void AVL::getInorderList(TreeNode* helpRoot) {
 }
 
 AVL::TreeNode* AVL::helperRemoveInorder(TreeNode* helpRoot, int n) {
+    // find Nth node and remove
     getInorderList(helpRoot);
     std::vector<TreeNode*>::iterator it;
     int i = 0;
